@@ -1,1 +1,267 @@
+To make it look like a high-end portfolio, we will use a "Dark Mode" aesthetic with neon/accent highlights. This gives it a premium, engineering-focused look.
+/* --- CSS VARIABLES (For easy theme changes) --- */
+:root {
+    --bg-color: #0a192f;
+    --text-main: #ccd6f6;
+    --text-muted: #8892b0;
+    --accent-color: #64ffda;
+    --card-bg: #112240;
+    --font-main: 'Inter', sans-serif;
+    --transition: all 0.3s ease-in-out;
+}
 
+/* --- GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    color: var(--text-main);
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.btn-secondary {
+    background: var(--text-muted);
+    color: var(--bg-color);
+    border: 1px solid var(--text-muted);
+    margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+    background: var(--text-main);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-content .subtitle {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .title {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-content .role {
+    font-size: clamp(30px, 6vw, 60px);
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.hero-content .description {
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* --- SECTION PADDING & HEADERS --- */
+.section-padding {
+    padding: 100px 10%;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.section-header .line {
+    height: 1px;
+    background-color: #233554;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+/* --- ABOUT SECTION --- */
+.about-content {
+    max-width: 700px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background: var(--card-bg);
+    color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: monospace;
+    border: 1px solid #233554;
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #233554;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.project-links a {
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 100px 20px 30px;
+}
+
+footer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+footer p {
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.copyright {
+    margin-top: 80px;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
