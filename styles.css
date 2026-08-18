@@ -265,3 +265,106 @@ footer p {
     font-family: monospace;
     font-size: 0.8rem;
 }
+
+
+/* =========================================
+   STAGE 3: RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Adjust Navigation for Mobile */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 5%;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* 2. Scale Down Section Padding */
+    .section-padding {
+        padding: 60px 5%;
+    }
+
+    .hero {
+        padding: 0 5%;
+        text-align: center; /* Center text on small screens for a cleaner look */
+    }
+
+    /* 3. Center Hero Content & Stack Buttons */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-content .description {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 250px;
+        gap: 15px; /* Adds space between stacked buttons */
+    }
+
+    .btn {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .btn-secondary {
+        margin-left: 0; /* Remove the left margin used in desktop view */
+    }
+
+    /* 4. Adjust Social Links */
+    .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* 5. Tweak Projects Grid for very small phones */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Forces exactly one column on mobile */
+    }
+    
+    /* 6. Center Footer Elements */
+    footer h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   STAGE 4: JAVASCRIPT ANIMATION STATES
+   ========================================= */
+
+/* The starting state for elements before they scroll into view */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* The ending state when JavaScript adds the 'active' class */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* The dynamic navbar shadow on scroll */
+.navbar.scrolled {
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    padding: 1rem 5%;
+}
+
+/* Highlight the active navigation link */
+.nav-links a.active {
+    color: var(--accent-color);
+}
